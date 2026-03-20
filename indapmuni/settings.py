@@ -154,7 +154,7 @@ else:
             'USER': os.getenv('DB_USER', 'postgres'),
             'PASSWORD': os.getenv('DB_PASSWORD','2077'),
             'HOST': os.getenv('DB_HOST', '127.0.0.1'),
-            'PORT': os.getenv('DB_PORT', '5433'),   
+            'PORT': os.getenv('DB_PORT', '5432'),   
         }
     }
 
