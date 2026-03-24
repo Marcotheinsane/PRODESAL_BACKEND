@@ -6,8 +6,8 @@ services:
     region: oregon
     plan: free
     pythonVersion: "3.11"
-    buildCommand: echo "Dependencies will be installed during start"
-    startCommand: bash build.sh
+    buildCommand: bash build.sh
+    startCommand: gunicorn indapmuni.wsgi:application --workers 1 --bind 0.0.0.0:$PORT
     envVars:
       - key: DEBUG
         value: "false"
@@ -21,3 +21,4 @@ services:
         sync: false
       - key: CSRF_TRUSTED_ORIGINS
         sync: false
+
