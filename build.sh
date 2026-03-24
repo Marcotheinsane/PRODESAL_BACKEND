@@ -13,3 +13,7 @@ echo "Recopilando archivos estáticos..."
 python manage.py collectstatic --no-input
 
 echo "✓ Build completado"
+
+# Iniciar gunicorn
+echo "Iniciando servidor..."
+exec python -m gunicorn indapmuni.wsgi:application --bind 0.0.0.0:${PORT:-8000}

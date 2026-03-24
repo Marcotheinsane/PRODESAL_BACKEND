@@ -6,8 +6,8 @@ services:
     region: oregon
     plan: free
     pythonVersion: "3.11"
-    buildCommand: pip install -r requirements.txt && python manage.py migrate && python manage.py collectstatic --no-input
-    startCommand: python -m gunicorn indapmuni.wsgi:application --bind 0.0.0.0:$PORT
+    buildCommand: echo "Dependencies will be installed during start"
+    startCommand: bash build.sh
     envVars:
       - key: DEBUG
         value: "false"
